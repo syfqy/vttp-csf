@@ -1,0 +1,33 @@
+<h2>{{ city }}</h2>
+<button [routerLink]="['/']" mat-flat-button color="primary">Back</button>
+
+<!-- display weather result -->
+<!-- only render when weatherResult is not undefined -->
+<mat-card *ngIf="!!weatherResult">
+  <table>
+    <tr>
+      <td>City</td>
+      <td>{{ weatherResult.city }}</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>{{ weatherResult.description }}</td>
+    </tr>
+    <tr>
+      <td>Temp</td>
+      <td>{{ weatherResult.temp }}</td>
+    </tr>
+    <tr>
+      <td>Humidity</td>
+      <td>{{ weatherResult.humidity }}</td>
+    </tr>
+    <tr>
+      <td>Wind Speed</td>
+      <td>{{ weatherResult.windSpeed }}</td>
+    </tr>
+    <tr>
+      <td>Wind Degree</td>
+      <td>{{ weatherResult.windDegree }}</td>
+    </tr>
+  </table>
+</mat-card>
