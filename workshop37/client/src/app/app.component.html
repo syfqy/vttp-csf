@@ -1,0 +1,21 @@
+<h1>New Post</h1>
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <table>
+    <tr>
+      <td>Comments:</td>
+      <td>
+        <textarea cols="30" rows="10" formControlName="comments"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>Picture:</td>
+      <td><input type="file" formControlName="picture" #file /></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button type="submit">Submit</button></td>
+    </tr>
+  </table>
+</form>
+
+<h2>Upload status: {{uploadStatus}}</h2>
