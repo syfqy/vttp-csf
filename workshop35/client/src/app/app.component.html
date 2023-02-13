@@ -1,0 +1,36 @@
+<h1>Boardgames app</h1>
+
+<!-- games per page dropdown -->
+<mat-form-field appearance="fill">
+  <mat-label>Games per page</mat-label>
+  <mat-select (selectionChange)="onLimitChange($event)">
+    <mat-option
+      *ngFor="let limit of limitOptions"
+      [value]="limit"
+      >{{limit}}</mat-option
+    >
+  </mat-select>
+</mat-form-field>
+
+<!-- list of games -->
+<div class="game-list">
+  <mat-card *ngFor="let game of games">
+    <mat-card-content>{{ game.name }}</mat-card-content>
+  </mat-card>
+</div>
+
+<!-- pagination buttons -->
+<div class="button-row">
+  <!-- disable prev button when on first page -->
+  <button
+    mat-flat-button
+    color="primary"
+    [disabled]="currOffset <= 0"
+    (click)="onChangePage(-1)"
+  >
+    Prev
+  </button>
+  <button mat-flat-button color="primary" (click)="onChangePage(1)">
+    Next
+  </button>
+</div>
