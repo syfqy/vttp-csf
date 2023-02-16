@@ -1,0 +1,25 @@
+<!-- character details -->
+<mat-card class="character-card">
+  <mat-card-header>
+    <mat-card-title>{{ character.name }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="character.imagePath" />
+  <mat-card-content>
+    <p>
+      {{ character.description }}
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<!-- comments section -->
+<div class="comment-list">
+  <div class="comment-header-row">
+    <h4>Comments</h4>
+    <button [routerLink]="['comment']" mat-raised-button color="primary">
+      New Comment
+    </button>
+  </div>
+  <mat-card *ngFor="let comment of character.comments">
+    <mat-card-content>{{ comment }}</mat-card-content>
+  </mat-card>
+</div>

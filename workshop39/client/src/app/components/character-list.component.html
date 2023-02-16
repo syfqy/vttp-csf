@@ -1,0 +1,21 @@
+<h3>List of Marvel Characters starting with: {{ nameStartsWith }}</h3>
+
+<div class="search-results">
+  <mat-card [routerLink]="[c.characterId]" *ngFor="let c of characters">
+    <mat-card-content>{{ c.name }}</mat-card-content>
+  </mat-card>
+</div>
+
+<div class="button-row">
+  <button
+    mat-flat-button
+    color="primary"
+    (click)="onChangePage(-1)"
+    [disabled]="currOffset <= 0"
+  >
+    Prev
+  </button>
+  <button mat-flat-button color="primary" (click)="onChangePage(1)">
+    Next
+  </button>
+</div>

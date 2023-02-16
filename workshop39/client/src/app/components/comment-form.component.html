@@ -1,0 +1,17 @@
+<h3>New comment for: {{ characterName }}</h3>
+
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <mat-form-field appearance="fill">
+    <mat-label>Comment</mat-label>
+    <textarea matInput formControlName="comment"></textarea>
+  </mat-form-field>
+  <button mat-stroked-button (click)="clearForm()">Clear</button>
+  <button
+    type="submit"
+    mat-raised-button
+    color="primary"
+    [disabled]="form.invalid"
+  >
+    Post Comment
+  </button>
+</form>

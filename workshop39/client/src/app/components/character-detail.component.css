@@ -1,0 +1,8 @@
+img {
+    max-width: 480px;
+}
+
+.comment-header-row {
+    display: flex;
+    justify-content: space-between;
+}
